@@ -1,0 +1,76 @@
+var momObj = function()
+{
+	this.x;
+	this.y;
+	this.bigEye = new Image();
+	this.bigBody = new Image();
+	this.bigTail = new Image();
+}
+momObj.prototype.init = function()
+{
+	this.x = canWidth * 0.5;
+	this.y = canHeight * 0.5;
+	this.bigEye.src = "img/babyEye0.png";
+	this.bigBody.src  = "img/bigSwim0.png";
+	this.bigTail.src  = "img/babyTail0.png";
+}
+momObj.prototype.draw = function()
+{
+	ctx1.save();
+	
+	ctx1.drawImage(this.bigEye, -this.bigEye.width * 0.5, -this.bigEye.height * 0.5);
+	ctx1.drawImage(this.bigBody, -this.bigEye.width * 0.5, -this.bigEye.height * 0.5);
+    ctx1.drawImage(this.bigTail, -this.bigEye.width * 0.5, -this.bigEye.height * 0.5);
+    ctx1.restore();
+}
+
+
+
+
+
+
+//大鱼 API translate();rotate()旋转.angle指旋转的角度，顺时针旋转;Math.atan2(y,x);
+
+var momObj = function(){
+
+this.x ;//坐标
+
+this.y ;
+
+this.bigEye = new Image();//鱼的眼睛
+
+this.bigBody = new Image();//鱼的身体
+
+this.bigTail = new Image();//鱼的尾巴
+
+}
+
+momObj.prototype.init = function(){
+
+this.x = canWidth * 0.5;
+
+this.y = canHeight  * 0.5;
+
+this.bigEye.src = "img/bigEye0.png";
+
+this.bigBody.src = "img/bigSwim0.png";
+
+this.bigTail.src = "img/babyTail0.png";
+
+}
+
+momObj.prototype.draw = function(){
+
+ctx1.save();
+
+ctx1.translate(this.x,this.y);/*方法转换画布的用户坐标系统。平移，将画布的坐标原点向左右方向移动x，向上下方向移动y.canvas的默认位置是在（0,0）*/
+
+ctx1.drawImage(this.bigEye,-this.bigEye.width*0.5,-this.bigEye.height*0.5);
+
+ctx1.drawImage(this.bigBody,-this.bigBody.width*0.5,-this.bigBody.height*0.5);
+
+ctx1.drawImage(this.bigTail,-this.bigTail.width*0.5+30,-this.bigTail.height*0.5);
+
+ctx1.restore();
+
+}
